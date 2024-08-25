@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-
+import {backendurl} from '../../Servicepage';
 
 function Myeditrecord() {
     
@@ -31,7 +31,7 @@ function Myeditrecord() {
         }
 
         const singleuser = () => {
-            axios.get(`http://localhost:5782/singledata/${id}`).then((d) => {
+            axios.get(`${backendurl}/singledata/${id}`).then((d) => {
               console.log(d.data);
               setdata(d.data);
             })
@@ -44,7 +44,7 @@ function Myeditrecord() {
           const updaterecord = async()=>{
 
             const {fullname,email,phone,dob,gender,course,profile,pass} = insdata;
-            const mydata = await fetch(`http://localhost:5782/updaterecord/${id}`,{
+            const mydata = await fetch(`${backendurl}/updaterecord/${id}`,{
                 method: "PATCH",
                 headers: {"content-type":"application/json"}, 
                 body: JSON.stringify({

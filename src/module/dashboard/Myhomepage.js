@@ -36,7 +36,7 @@ function Myhomepage() {
   }, []);
      
        const mydeleterecord =(id)=>{
-        axios.delete(`http://localhost:5782/deleterecord/${id}`).then((d)=>{
+        axios.delete(`${backendurl}/deleterecord/${id}`).then((d)=>{
         console.log(d.data);
         myalldata();
         });
