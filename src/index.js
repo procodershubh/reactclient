@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Myloginpage from './module/auth/Myloginpage';
+import "../src/assets/global.css";
+import Myregistorpage from './module/auth/Myregistorpage';
+import Mylandingpage from './module/dashboard/Mylandingpage';
+import Myhomepage from './module/dashboard/Myhomepage';
+import Profilepage from './module/dashboard/Profilepage';
+import Myeditrecord from './module/dashboard/Myeditrecord';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    
+    <BrowserRouter>
+    <Routes>
+      <Route path='' element={<Myloginpage/>}/>
+      <Route path='registor' element={<Myregistorpage/>}/>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <Route path='dashboard' element={<Mylandingpage/>}>
+      <Route path='' element={<Myhomepage/>}/>
+      <Route path='view/:id' element={<Profilepage/>}/>
+      <Route path='edit/:id' element={<Myeditrecord/>}/>
+
+
+      
+      </Route>
+
+      
+    </Routes>
+
+    </BrowserRouter>
+
+  </React.StrictMode>
+); 
+
+
