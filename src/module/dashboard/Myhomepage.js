@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 import { GrView } from "react-icons/gr";
 import { FaEdit } from "react-icons/fa";
-
+import {backendurl} from "../../Servicepage";
 
 
 function Myhomepage() {
@@ -25,7 +25,7 @@ function Myhomepage() {
 
 
   const myalldata = () => {
-    axios.get("http://localhost:5782/allusers").then((d) => {
+    axios.get(`${backendurl}/allusers`).then((d) => {
       console.log(d.data);
       setdata(d.data);
     });
