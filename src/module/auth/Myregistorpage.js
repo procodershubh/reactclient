@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
-import {backendurl} from "../../Servicepage";
 
 
 function Myregistorpage() {
@@ -32,7 +31,7 @@ function Myregistorpage() {
     const registerpage = async()=>{
 
         const {fullname,email,phone,dob,gender,course,profile,pass} = insdata;
-        const mydata = await fetch(`${backendurl}/createdata`,{
+        const mydata = await fetch("http://localhost:5782/createdata",{
             method: "POST",
             headers: {"content-type":"application/json"}, 
             body: JSON.stringify({
@@ -49,12 +48,14 @@ function Myregistorpage() {
         }
         else if(res.status===409)
         {
-            alert("Email is already registered");
+            alert("email allready used")
         }
         else if(res.status===450)
-        {
-            alert("name must be 5 digit")
-        }
+            {
+                alert("name must be 3 digit")
+            }
+        
+
         
     }
 

@@ -58,7 +58,7 @@ function Myhomepage() {
         </div>
       </div>
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-md-9">
           <table class="table table-bordered">
   <thead>
     <tr>
@@ -94,7 +94,7 @@ function Myhomepage() {
         <Link className="badge text-bg-primary" to={`view/`+d._id}><GrView/></Link>
         <Link class="badge text-bg-warning" to={`edit/`+d._id}><FaEdit/></Link>
         <button type="button" className="badge text-bg-danger" onClick={()=>{mydeleterecord(d._id)}} ><MdDeleteForever/></button>
-
+        
 
       </td>
  
@@ -102,6 +102,7 @@ function Myhomepage() {
 
 
     </tr>
+
 
       )
 
@@ -145,6 +146,7 @@ function Myhomepage() {
       </div>
       
     </div>
+  
     </Fragment>
   );
 }
