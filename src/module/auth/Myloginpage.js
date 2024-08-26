@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { HiOutlineMail } from "react-icons/hi";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import { Link, useNavigate } from 'react-router-dom';
-import {backendurl} from "../../Servicepage";
 
 
 function Myloginpage() {
@@ -35,7 +34,7 @@ function Myloginpage() {
         else
         {
 
-        const mydata = await fetch(`${backendurl}/mylogin`, {
+        const mydata = await fetch("http://localhost:5782/mylogin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
