@@ -10,6 +10,7 @@ import Mylandingpage from './module/dashboard/Mylandingpage';
 import Myhomepage from './module/dashboard/Myhomepage';
 import Profilepage from './module/dashboard/Profilepage';
 import Myeditrecord from './module/dashboard/Myeditrecord';
+import Mytexteditor from './module/dashboard/Mytexteditor';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
       <Route path='' element={<Myhomepage/>}/>
       <Route path='view/:id' element={<Profilepage/>}/>
       <Route path='edit/:id' element={<Myeditrecord/>}/>
+      <Route path='myeditor' element={<Mytexteditor/>}/>
 
 
       

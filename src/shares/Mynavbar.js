@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { FaWhatsapp } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 function Mynavbar() {
   return (
@@ -31,6 +33,9 @@ function Mynavbar() {
           </li>
           <li className="nav-item">
             <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link " to="https://api.whatsapp.com/send/?phone=+91-8409285776&text=Hi%21&type=phone_number&app_absent=0" ><FaWhatsapp /></Link>
           </li>
         </ul>
         <form className="d-flex" role="search">
